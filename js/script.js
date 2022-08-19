@@ -30,18 +30,15 @@ const renderPokemon = async (pokemon) => {
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         input.value = '';
         searchPokemon = data.id;
-    } else {
-        pokemonImage.style.display = 'none';
-        pokemonName.innerHTML = 'Not found :c';
-        pokemonNumber.innerHTML = '';
-    }
-
+        return
+    } 
+    pokemonImage.style.display = 'none';
+    pokemonName.innerHTML = 'Not found :c';
+    pokemonNumber.innerHTML = '';
 }
 //buscar api
 form.addEventListener('submit', (event) => {
-
     event.preventDefault();
-
     renderPokemon(input.value.toLowerCase());
 });
 
